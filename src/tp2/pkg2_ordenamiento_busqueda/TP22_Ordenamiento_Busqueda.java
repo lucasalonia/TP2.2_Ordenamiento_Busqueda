@@ -56,28 +56,32 @@ public class TP22_Ordenamiento_Busqueda {
         //diferencia
     }
 
+    
+    
     //INSERTATION SORT
     public static Pais[] insertationSort(Pais[] JJOO) {
-        int i, j;
-        Pais aux;
-        int tamaño = JJOO.length;
 
-        for (i = 1; i < tamaño - 1; i++) {
 
-            aux = JJOO[i];
-            j = i - 1;
+int n = JJOO.length;
+    
+    for (int i = 1; i < n; i++) {
+       Pais key = JJOO[i]; // Elemento a insertar
+        int j = i - 1;
 
-            while (j > 0 && JJOO[j].compareTo(JJOO[i]) < 0) {
-
-                System.out.println("dw");
-                JJOO[i] = JJOO[j];
-                j = j - 1;
-                JJOO[j] = aux;
-            }
+        // Mover los elementos mayores que key hacia la derecha
+        while (j >= 0 && JJOO[j].compareTo(JJOO[i]) > 0.) {
+            JJOO[j + 1] = JJOO[j];
+            j--;
         }
-        return JJOO;
+        
+        // Insertar key en su posición correcta
+        JJOO[j + 1] = key;
+        
+         
     }
-
+     return JJOO;
+    }
+    
     public static void muestra(Pais[] JJOO) {
         for (Pais pais : JJOO) {
 
@@ -85,6 +89,7 @@ public class TP22_Ordenamiento_Busqueda {
 
         }
     }
+
 
     public static void ordenarRanking(Pais[] JJOO) {
         int i = 1;
@@ -97,9 +102,9 @@ public class TP22_Ordenamiento_Busqueda {
     public static void main(String[] args) {
         // TODO code application logic here
         Pais[] JJOO = new Pais[3];
-        JJOO[0] = new Pais("Brasil", 3, 2, 2);
-        JJOO[1] = new Pais("Argentina", 200, 2, 2);
-        JJOO[2] = new Pais("Nicaragua", 1, 2, 2);
+        JJOO[0] = new Pais("Brasil", 2, 2, 2);
+        JJOO[1] = new Pais("Argentina", 2, 2, 2);
+        JJOO[2] = new Pais("Nicaragua", 2, 2, 2);
 
         muestra(JJOO);
         System.out.println("\n+++++++++\n");
