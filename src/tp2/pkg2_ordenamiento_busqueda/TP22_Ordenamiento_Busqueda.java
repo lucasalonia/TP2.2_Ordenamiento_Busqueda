@@ -21,19 +21,20 @@ public class TP22_Ordenamiento_Busqueda {
      */
    
     public static Pais[] bubbleSort(Pais[] JJOO){
+        //tiempo inicial
        int i, j;
        Pais temp;
         int tamaño = JJOO.length;
         boolean flag;
 
-        for (i = (tamaño - 1); i >= 0; i--) {
-
+      //  for (i = (tamaño - 1); i >= 0; i--) { //DIJO PABLO POR QUE ORDENARLO COMO TAL (?
+            for (i = 0;  i<tamaño-1; i++){
             flag = false;
 
-            for (j = 0; j < i; j++) {
-
-                if (JJOO[j].compareTo(JJOO[j + 1]) < 0) {
-
+            //for (j = 0; j < i; j++) {
+                for(j=0;j<tamaño-1-i ;j++){
+//                if (JJOO[j].compareTo(JJOO[j + 1]) < 0) {
+                     if (JJOO[j].compareTo(JJOO[j + 1]) > 0){
                     temp = JJOO[j];
                     JJOO[j] = JJOO[j + 1];
                     JJOO[j + 1] = temp;
@@ -47,6 +48,9 @@ public class TP22_Ordenamiento_Busqueda {
         }
         return JJOO;
             
+        //tiemnpo final 
+        //diferencia
+        
     }
     
     public static void muestra(Pais[] JJOO){
@@ -68,9 +72,9 @@ public class TP22_Ordenamiento_Busqueda {
     public static void main(String[] args) {
         // TODO code application logic here
         Pais[] JJOO = new Pais[3];
-        JJOO[0] = new Pais("Brasil",2,1,1);
-        JJOO[1] = new Pais("Argentina", 1,1,1);
-        JJOO[2] = new Pais("Nicaragua", 1,1,1);
+        JJOO[0] = new Pais("Brasil",2,2,2);
+        JJOO[1] = new Pais("Argentina", 2,2,2);
+        JJOO[2] = new Pais("Nicaragua", 2,2,2);
         
         
         muestra(JJOO);

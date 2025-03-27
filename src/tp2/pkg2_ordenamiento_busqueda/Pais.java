@@ -54,22 +54,28 @@ public class Pais implements Comparable<Pais>{
     @Override
     public int compareTo(Pais otroPais) {
         //Devuelve 0 cuando son iguales. Numero positivo cuando era mayor y negativo si es menor
-        int oro = medallasOro.compareTo(otroPais.medallasOro);
-        int plata = medallasPlata.compareTo(otroPais.medallasPlata);
-        int bronce = medallasBronce.compareTo(otroPais.medallasBronce);
-        int pais = this.nombre.compareTo(otroPais.nombre);
-        
-        if (oro!=0) {
+        int oro = otroPais.medallasOro.compareTo(this.medallasOro);
+
+//        int plata = medallasPlata.compareTo(otroPais.medallasPlata);
+        int plata = otroPais.medallasPlata.compareTo(this.medallasPlata);
+
+//        int bronce = medallasBronce.compareTo(otroPais.medallasBronce);
+        int bronce = otroPais.medallasBronce.compareTo(this.medallasBronce);
+
+        int pais = this.nombre.compareTo(otroPais.nombre); //asi funcionona 
+//        int pais = otroPais.nombre.compareTo(this.nombre); // INVERTIR LA COMPARACION
+
+        if (oro != 0) {
             return oro;
         }
-        if (plata!=0) {
+        if (plata != 0) {
             return plata;
         }
-        if (bronce!=0) {
+        if (bronce != 0) {
             return bronce;
         }
-        
-       return pais; 
+
+        return pais;
     }
 
     @Override
