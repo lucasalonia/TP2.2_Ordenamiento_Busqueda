@@ -60,28 +60,32 @@ public class TP22_Ordenamiento_Busqueda {
     
     //INSERTATION SORT
     public static Pais[] insertationSort(Pais[] JJOO) {
+        long tiempoInicial = System.nanoTime();
 
+        int n = JJOO.length;
 
-int n = JJOO.length;
-    
-    for (int i = 1; i < n; i++) {
-       Pais key = JJOO[i]; // Elemento a insertar
-        int j = i - 1;
+        for (int i = 1; i < n; i++) {
+            Pais key = JJOO[i]; // Elemento a insertar
+            int j = i - 1;
 
-        // Mover los elementos mayores que key hacia la derecha
-        while (j >= 0 && JJOO[j].compareTo(JJOO[i]) > 0.) {
-            JJOO[j + 1] = JJOO[j];
-            j--;
+            // Mover los elementos mayores que key hacia la derecha
+            while (j >= 0 && JJOO[j].compareTo(JJOO[i]) > 0.) {
+                JJOO[j + 1] = JJOO[j];
+                j--;
+            }
+
+            // Insertar key en su posición correcta
+            JJOO[j + 1] = key;
+
         }
-        
-        // Insertar key en su posición correcta
-        JJOO[j + 1] = key;
-        
-         
+
+        long tiempoFinal = System.nanoTime();
+        long duration = tiempoFinal - tiempoInicial; // Tiempo en nanosegundos
+        System.out.println("Tiempo de ejecución: " + duration + " ns");
+
+        return JJOO;
     }
-     return JJOO;
-    }
-    
+
     public static void muestra(Pais[] JJOO) {
         for (Pais pais : JJOO) {
 
@@ -109,8 +113,8 @@ int n = JJOO.length;
         muestra(JJOO);
         System.out.println("\n+++++++++\n");
 
-//        bubbleSort(JJOO);
-
+       bubbleSort(JJOO);
+    
         insertationSort(JJOO);
 
         ordenarRanking(JJOO);
