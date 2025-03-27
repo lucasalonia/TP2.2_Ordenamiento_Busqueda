@@ -39,9 +39,16 @@ public class Pais implements Comparable<Pais>{
         return medallasBronce;
     }
 
-    public Integer getRanking() {
+    public int getRanking() {
         return ranking;
     }
+
+    public void setRanking(int ranking) {
+        this.ranking = ranking;
+    }
+    
+    
+  
      
     
     @Override
@@ -64,6 +71,13 @@ public class Pais implements Comparable<Pais>{
         
        return pais; 
     }
+
+    @Override
+    public String toString() {
+        return "Pais{" + "nombre=" + nombre + ", medallasOro=" + medallasOro + ", medallasPlata=" + medallasPlata + ", medallasBronce=" + medallasBronce + ", ranking=" + ranking + '}';
+    }
+    
+    
     
     
 }
