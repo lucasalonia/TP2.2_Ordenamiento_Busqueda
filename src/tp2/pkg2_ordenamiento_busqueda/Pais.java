@@ -60,7 +60,7 @@ public class Pais implements Comparable<Pais>{
         int plata = otroPais.medallasPlata.compareTo(this.medallasPlata);
 
 //        int bronce = medallasBronce.compareTo(otroPais.medallasBronce);
-        int bronce = otroPais.medallasBronce.compareTo(this.medallasBronce);
+        int bronce = otroPais.medallasBronce.compareTo(this.medallasBronce); 
 
         int pais = this.nombre.compareTo(otroPais.nombre); //asi funcionona 
 //        int pais = otroPais.nombre.compareTo(this.nombre); // INVERTIR LA COMPARACION
